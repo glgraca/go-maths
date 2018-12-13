@@ -7,7 +7,7 @@ import (
 )
 
 func pascal(n uint64) <-chan uint64 {
-  out:=make(chan uint64)
+  out:=make(chan uint64, n+1)
   if n==0 {
     go func() {
       out<-1
